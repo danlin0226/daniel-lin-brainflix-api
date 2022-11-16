@@ -1,0 +1,29 @@
+{
+  "name": "daniel-lin-brainflix-api",
+  "version": "1.0.0",
+  "description": "api for brainflix app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danlin0226/daniel-lin-brainflix-api.git"
+  },
+  "keywords": [
+    "brainflix",
+    "api"
+  ],
+  "author": "Daniel Lin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danlin0226/daniel-lin-brainflix-api/issues"
+  },
+  "homepage": "https://github.com/danlin0226/daniel-lin-brainflix-api#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
