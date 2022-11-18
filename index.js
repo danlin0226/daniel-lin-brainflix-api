@@ -7,12 +7,14 @@ const app = express();
 const cors = require("cors");
 
 const videoRouter = require("./routes/videos");
+const commentsRouter = require("./routes/comments");
 
 app.use(cors());
 
 app.use(express.json());
 
 app.use("/videos", videoRouter);
+app.use("/videos", commentsRouter);
 
 app.use(express.static(path.join(__dirname, "public")));
 

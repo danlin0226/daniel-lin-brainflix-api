@@ -7,7 +7,6 @@ const { getNewId, writeJSONfile } = require("../helper/helper");
 const path = require("node:path");
 
 const videosJSONPath = path.join(__dirname, "../data/videos.json");
-// console.log(videosJSONPath);
 const videos = require(videosJSONPath);
 
 router.get("/", (req, res) => {
@@ -31,7 +30,6 @@ router.get("/:id", (req, res) => {
 
 router.post("/", (req, res) => {
   const { title, description, image } = req.body;
-  console.log(req.body);
   if (!title || !description || !image) {
     return res.status(400).json({
       error: "Please provide title and description for video",
@@ -48,7 +46,7 @@ router.post("/", (req, res) => {
     likes: "0",
     duration: "8:88",
     video: "https://project-2-api.herokuapp.com/stream",
-    timestamp: Date.now(), //put a new timestamp
+    timestamp: Date.now(),
     comments: [],
   };
 
