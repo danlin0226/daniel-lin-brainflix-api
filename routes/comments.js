@@ -8,6 +8,7 @@ const path = require("node:path");
 const videosJSONPath = path.join(__dirname, "../data/videos.json");
 const videos = require(videosJSONPath);
 
+//posting comments
 router.post("/:id/comments", (req, res) => {
   const { name, comment } = req.body;
   if (!name || !comment) {
@@ -36,6 +37,7 @@ router.post("/:id/comments", (req, res) => {
   }
 });
 
+//deleting comments
 router.delete("/:videoId/comments/:commentId", (req, res) => {
   videoIndex = videos.findIndex((video) => req.params.videoId === video.id);
   commentIndex = videos[videoIndex].comments.findIndex(

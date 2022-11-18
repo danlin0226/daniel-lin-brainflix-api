@@ -299,5 +299,18 @@
         "timestamp": 1632496261000
       }
     ]
+  },
+  {
+    "id": "6a73df69-dd92-41c3-af81-5660208ada30",
+    "title": "Test Video",
+    "channel": "Placeholder Channel",
+    "image": "/images/Upload-video-preview.jpg",
+    "description": "Test Video",
+    "views": "0",
+    "likes": 2,
+    "duration": "8:88",
+    "video": "https://project-2-api.herokuapp.com/stream",
+    "timestamp": 1668761464033,
+    "comments": []
   }
 ]

@@ -60,4 +60,25 @@ router.post("/", (req, res) => {
   }
 });
 
+router.patch("/:videoId/likes", (req, res) => {
+  try {
+    const found = videos.filter((video) => video.id === req.params.videoId);
+
+    if (found) {
+      const updatedVideoLikes = videos.map((video) =>
+        video.id === req.params.videoId
+          ? { ...video, likes: ++video.likes }
+          : video
+      );
+      console.log(updatedVideoLikes);
+
+      writeJSONfile(videosJSONPath, updatedVideoLikes);
+    } else {
+      res.status(404).json({ video: "error" });
+    }
+  } catch (error) {
+    console.error(error);
+  }
+});
+
 module.exports = router;
