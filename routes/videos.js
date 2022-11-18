@@ -30,8 +30,8 @@ router.get("/:id", (req, res) => {
 });
 
 router.post("/", (req, res) => {
-  const { title, description } = req.body;
-  if (!title || !description) {
+  const { title, description, image } = req.body;
+  if (!title || !description || !image) {
     return res.status(400).json({
       error: "Please provide title and description for video",
     });
@@ -41,7 +41,7 @@ router.post("/", (req, res) => {
     id: getNewId(),
     title,
     channel: "Placeholder Channel",
-    image: "https://i.imgur.com/l2Xfgpl.jpg",
+    image,
     description,
     views: "0",
     likes: "0",
