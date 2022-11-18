@@ -6,12 +6,6 @@ const getNewId = () => {
   return uuidv4();
 };
 
-const getTimeStamp = () => {
-  const date = new Date();
-  timeStampSeconds = date.getTime() / 1000;
-  return timeStampSeconds;
-};
-
 const writeJSONfile = (filename, data) => {
   try {
     writeFileSync(filename, JSON.stringify(data), "utf-8");
@@ -21,4 +15,4 @@ const writeJSONfile = (filename, data) => {
   }
 };
 
-module.exports = { getNewId, getTimeStamp, writeJSONfile };
+module.exports = { getNewId, writeJSONfile };

@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-const { getNewId, getTimeStamp, writeJSONfile } = require("../helper/helper");
+const { getNewId, writeJSONfile } = require("../helper/helper");
 
 //json file
 const path = require("node:path");
@@ -31,6 +31,7 @@ router.get("/:id", (req, res) => {
 
 router.post("/", (req, res) => {
   const { title, description, image } = req.body;
+  console.log(req.body);
   if (!title || !description || !image) {
     return res.status(400).json({
       error: "Please provide title and description for video",
@@ -41,13 +42,13 @@ router.post("/", (req, res) => {
     id: getNewId(),
     title,
     channel: "Placeholder Channel",
-    image,
+    image: image,
     description,
     views: "0",
     likes: "0",
     duration: "8:88",
     video: "https://project-2-api.herokuapp.com/stream",
-    timestamp: getTimeStamp(), //put a new timestamp
+    timestamp: Date.now(), //put a new timestamp
     comments: [],
   };
 
