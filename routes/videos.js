@@ -43,7 +43,7 @@ router.post("/", (req, res) => {
     image: image,
     description,
     views: "0",
-    likes: "0",
+    likes: 0,
     duration: "8:88",
     video: "https://project-2-api.herokuapp.com/stream",
     timestamp: Date.now(),
@@ -65,14 +65,15 @@ router.patch("/:videoId/likes", (req, res) => {
     const found = videos.filter((video) => video.id === req.params.videoId);
 
     if (found) {
+      console.log("patch");
       const updatedVideoLikes = videos.map((video) =>
         video.id === req.params.videoId
           ? { ...video, likes: ++video.likes }
           : video
       );
-      console.log(updatedVideoLikes);
 
       writeJSONfile(videosJSONPath, updatedVideoLikes);
+      res.status(200).send("success");
     } else {
       res.status(404).json({ video: "error" });
     }
