@@ -11,7 +11,7 @@ const writeJSONfile = (filename, data) => {
     writeFileSync(filename, JSON.stringify(data), "utf-8");
     console.log("write success");
   } catch (error) {
-    console.log(error);
+    console.log("error");
   }
 };
 

@@ -71,9 +71,9 @@ router.patch("/:videoId/likes", (req, res) => {
           ? { ...video, likes: ++video.likes }
           : video
       );
-
+      console.log(updatedVideoLikes);
       writeJSONfile(videosJSONPath, updatedVideoLikes);
-      res.status(200).send("success");
+      res.status(200).json(updatedVideoLikes);
     } else {
       res.status(404).json({ video: "error" });
     }
